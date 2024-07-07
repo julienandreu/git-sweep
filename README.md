@@ -20,6 +20,7 @@ Pre-built packages for Windows, macOS, and Linux are found on the [Releases](htt
 ### Using Homebrew
 
 ```sh
+brew tap julienandreu/tap
 brew install git-sweep
 ```
 
