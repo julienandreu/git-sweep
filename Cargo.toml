@@ -1,6 +1,18 @@
 [package]
 name = "git-sweep"
+description = "A CLI tool to remove all non-current branches from a local Git repository."
+authors = ["Julien Andreu<julienandreu@me.com>"]
+repository = "https://github.com/julienandreu/git-sweep"
+license-file = "LICENSE"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.79.0"
 
 [dependencies]
+
+[profile.release]
+panic = "abort"   # Strip expensive panic clean-up logic
+codegen-units = 1 # Compile crates one after another so the compiler can optimize better
+lto = true        # Enables link to optimizations
+opt-level = 3
+strip = true      # Remove debug symbols
