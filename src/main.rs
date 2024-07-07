@@ -61,18 +61,18 @@ fn main() {
         exit(0);
     }
 
-    let sweeped_branches = branches
+    let swept_branches = branches
         .into_iter()
         .map(|branch| git_branch_delete(&branch))
         .collect::<Vec<String>>();
 
-    let sweeped_message = format!(
-        "{} branch{} successfully sweeped in {:?}:\n {}",
-        sweeped_branches.len(),
-        if sweeped_branches.len() > 1 { "es" } else { "" },
+    let swept_message = format!(
+        "{} branch{} successfully swept in {:?}:\n {}",
+        swept_branches.len(),
+        if swept_branches.len() > 1 { "es" } else { "" },
         start.elapsed(),
-        format_branch_list(&sweeped_branches)
+        format_branch_list(&swept_branches)
     );
 
-    println!("{}", sweeped_message);
+    println!("{}", swept_message);
 }
